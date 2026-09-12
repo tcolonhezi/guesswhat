@@ -1,0 +1,25 @@
+.container {
+  background-color: #EBEBFC;
+  color: #4F4FB9;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.62rem;
+}
+
+.container h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.container p {
+  font-size: 1rem;
+  margin-top: 0.31rem;
+}
+
+.container > img { 
+  height: 2rem;
+}
+

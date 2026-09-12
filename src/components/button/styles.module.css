@@ -1,0 +1,10 @@
+.container { 
+  background-color: #6363DB ;
+  height: 2.87rem;
+  width: 6.62rem;
+  border-radius: 0.5rem ;
+  border: 2px solid #4f4fb9;
+  color: #fff;
+  font-weight: 700;
+  padding: 0 0.87rem;
+}
