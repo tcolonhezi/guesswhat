@@ -11,8 +11,6 @@ export type ChallengeApiResponse = {
 };
 
 export async function getAPIChallenge(data: ChallengeApiRequest) {
-  console.log(data);
   const response = await api.post<ChallengeApiResponse>("/challenge", data, {});
-  console.log(response);
   return response.data;
 }

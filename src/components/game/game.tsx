@@ -50,7 +50,6 @@ export function Game({
   }
 
   function handleConfirmLetter() {
-    console.log(challenge, letter, score);
     if (!challenge) {
       return;
     }

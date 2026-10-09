@@ -51,8 +51,6 @@ function App() {
   }
 
   async function createChallenge() {
-    console.log(isOffLine, theme, session.session?.sessionId);
-
     setIsGeneratingChallenge(true);
     try {
       if (!isOffLine && theme && session.session) {
@@ -69,7 +67,7 @@ function App() {
       }
       createOfflineChallenge();
     } catch (error) {
-      console.log(error);
+      console.log("Erro ao criar desafio:", error);
       if (isAxiosError(error)) {
         if (error.status === 404) {
           createSession();
@@ -98,7 +96,6 @@ function App() {
   }, [restartGame, theme]);
 
   useEffect(() => {
-    console.log(session);
     if (!session.isLoading && !session.session) {
       createSession();
     }
