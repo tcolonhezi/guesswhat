@@ -1,0 +1,93 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.75);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 10;
+}
+
+.overlay h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.overlay h2 {
+    font-size: 1rem;
+
+}
+
+.main { 
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+
+  padding: 4rem;
+  border-radius: 2rem;
+}
+
+.themes { 
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme {
+  padding: .5rem;
+  border-radius: 10px;
+  background-color: rgb(149, 190, 238);
+  font-weight: 700;
+}
+
+.themeCard { 
+  min-height: 76px; 
+  padding: 1rem; 
+  border: 2px solid #e5e1ef; 
+  border-radius: 0.875rem; 
+  background-color: #aa8ef5; 
+  color: #342b4d; 
+  font: inherit; 
+  font-weight: 600; 
+  cursor: pointer; 
+  transition: border-color 0.2s, background-color 0.2s, transform 0.2s; 
+}
+
+.themeCard:hover { 
+  border-color: #a78bfa; 
+  transform: translateY(-2px); 
+} 
+
+.themeCard:focus-visible, .continueButton:focus-visible {
+   outline: 3px solid #a78bfa; 
+   outline-offset: 3px; 
+    }
+
+.selected { 
+  border-color: #7c3aed; 
+  background-color : #9178ff; 
+  color: #5b21b6; 
+}
+
+.buttonContinuar { 
+  margin-top: 2rem;
+  background-color: #6363DB ;
+  height: 2.87rem;
+  width: 6.62rem;
+  border-radius: 0.5rem ;
+  border: 2px solid #4f4fb9;
+  color: #fff;
+  font-weight: 700;
+  padding: 0 0.87rem;
+}
