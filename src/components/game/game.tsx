@@ -1,6 +1,5 @@
 import styles from "./styles.module.css";
 import type { Challenge } from "../../utils/words";
-import Button from "../button";
 import Header from "../header";
 import Input from "../input";
 import LetterUsed, { type LettersUsedProps } from "../lettersUsed";
