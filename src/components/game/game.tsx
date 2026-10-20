@@ -44,10 +44,6 @@ export function Game({
     handleConfirmLetter();
   }, [letter]);
 
-  function handleInputLetter(e: ChangeEvent<HTMLInputElement>) {
-    setLetter(e.target.value.toUpperCase());
-  }
-
   function handleGuess(letter: string) {
     if (isWinner || isLoser) return;
 
