@@ -1,4 +1,3 @@
-import styles from "./styles.module.css";
 import tipSvg from "../../assets/tip.svg";
 
 type Props = {
@@ -7,11 +6,11 @@ type Props = {
 
 export default function Tip({ tip }: Props) {
   return (
-    <div className={styles.container}>
-      <img src={tipSvg} alt="Ícone de dica" />
+    <div className="flex items-center gap-4 rounded-[0.62rem] bg-brand-soft p-4 text-brand-dark">
+      <img className="h-8" src={tipSvg} alt="Ícone de dica" />
       <div>
-        <h3>Dica</h3>
-        <p>{tip}</p>
+        <h3 className="text-xl font-bold">Dica</h3>
+        <p className="mt-[0.31rem] text-base">{tip}</p>
       </div>
     </div>
   );

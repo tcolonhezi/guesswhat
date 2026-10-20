@@ -1,5 +1,4 @@
 import Letter from "../letter";
-import styles from "./styles.module.css";
 
 export type LettersUsedProps = {
   letter: string;
@@ -12,9 +11,9 @@ type Props = {
 
 export default function LetterUsed({ data }: Props) {
   return (
-    <div className={styles.container}>
-      <h5>Letras Utilizadas</h5>
-      <div className={styles.usedLetters}>
+    <div>
+      <h5 className="font-bold">Letras Utilizadas</h5>
+      <div className="mt-3 flex flex-wrap gap-3">
         {data.map(({ letter, correct }) => {
           return (
             <Letter

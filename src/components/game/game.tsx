@@ -1,4 +1,3 @@
-import styles from "./styles.module.css";
 import type { Challenge } from "../../utils/words";
 import Header from "../header";
 import Input from "../input";
@@ -90,7 +89,7 @@ export function Game({
   }
 
   return (
-    <div className={styles.main}>
+    <div>
       <Header
         current={attempts}
         max={challenge.word.length * 2}
@@ -100,7 +99,7 @@ export function Game({
       />
 
       <Tip tip={challenge.tip} />
-      <div className={styles.word}>
+      <div className="my-10 flex w-full flex-wrap justify-center gap-4">
         {challenge.word.split("").map((char, index) => {
           const letterToDisplay = lettersUsed.find(
             (e) => e.letter.toLocaleLowerCase() === char,
@@ -114,8 +113,8 @@ export function Game({
       </div>
 
       <div>
-        <h4>Palpite</h4>
-        <div className={styles.guessInput}>
+        <h4 className="font-bold">Palpite</h4>
+        <div className="my-3 flex gap-3">
           <Input
             autoFocus
             maxLength={1}
@@ -125,7 +124,7 @@ export function Game({
           />
         </div>
       </div>
-      <div className={styles.line} />
+      <div className="border-t-2 border-divider" />
       <LetterUsed data={lettersUsed} />
 
       {isWinner && (

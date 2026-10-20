@@ -35,7 +35,7 @@ A lógica principal está em `src/App.tsx`, que coordena:
 - fallback offline com lista local de palavras;
 - contagem de tentativas e letras já usadas;
 - tela de vitória/derrota e reinício do jogo;
-- suporte visual com CSS Modules e componente de confete.
+- suporte visual com Tailwind CSS v4 e componente de confete.
 
 ## Stack
 
@@ -43,7 +43,7 @@ A lógica principal está em `src/App.tsx`, que coordena:
 - TypeScript
 - Vite
 - Axios
-- CSS Modules
+- Tailwind CSS v4
 - [react-confetti](https://www.npmjs.com/package/react-confetti)
 
 ## Estrutura do projeto
@@ -51,7 +51,6 @@ A lógica principal está em `src/App.tsx`, que coordena:
 ```text
 src/
   App.tsx                 # fluxo principal: tema, sessão, desafio e modo offline
-  App.module.css
   api/
     api.ts                # configuração do cliente Axios
   components/
