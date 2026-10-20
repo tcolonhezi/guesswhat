@@ -1,5 +1,3 @@
-import styles from "./App.module.css";
-
 import { WORDS, type Challenge } from "./utils/words";
 import { useEffect, useState } from "react";
 import { useSession } from "./hooks/useSession";
@@ -112,7 +110,9 @@ function App() {
   if (isGeneratingChallenge) {
     return (
       <Messages>
-        <h2>Gerando desafio com a inteligência artificial...</h2>
+        <h2 className="text-base font-bold">
+          Gerando desafio com a inteligência artificial...
+        </h2>
       </Messages>
     );
   }
@@ -120,13 +120,13 @@ function App() {
   if (!challenge)
     return (
       <Messages>
-        <h2>Carregando modo offline...</h2>
+        <h2 className="text-base font-bold">Carregando modo offline...</h2>
       </Messages>
     );
 
   return (
-    <div className={styles.container}>
-      <main>
+    <div className="flex min-h-screen flex-col items-center justify-center gap-8 px-4 py-8">
+      <main className="w-full max-w-139 rounded-xl bg-white p-8 pt-18">
         <Game
           handleChangeTheme={handleChangeTheme}
           key={challenge.id}
@@ -135,7 +135,11 @@ function App() {
           isOffline={isOffLine}
         />
       </main>
-      {isOffLine && <h4>Jogando em modo offline. O tema será programação.</h4>}
+      {isOffLine && (
+        <h4 className="text-center font-bold">
+          Jogando em modo offline. O tema será programação.
+        </h4>
+      )}
     </div>
   );
 }
