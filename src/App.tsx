@@ -1,4 +1,4 @@
-import { WORDS, type Challenge } from "./utils/words";
+import { WORDS, type Challenge } from "./constants/words";
 import { useEffect, useState } from "react";
 import { useSession } from "./hooks/useSession";
 import { createAPISession } from "./services/session";

@@ -1,4 +1,4 @@
-import Letter from "../letter";
+import Letter from "../letter/letter";
 
 export type LettersUsedProps = {
   letter: string;

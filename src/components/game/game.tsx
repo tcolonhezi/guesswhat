@@ -1,9 +1,9 @@
-import type { Challenge } from "../../utils/words";
-import Header from "../header";
-import Input from "../input";
-import LetterUsed, { type LettersUsedProps } from "../lettersUsed";
-import Tip from "../tip";
-import Letter from "../letter";
+import type { Challenge } from "../../constants/words";
+import Header from "../header/header";
+import Input from "../input/input";
+import LetterUsed, { type LettersUsedProps } from "../lettersUsed/lettersUsed";
+import Tip from "../tip/tip";
+import Letter from "../letter/letter";
 import { useEffect, useState, type ChangeEvent } from "react";
 import { RestartScreen } from "../restartScreen/restartScreen";
 import type { Dispatch, SetStateAction } from "react";
