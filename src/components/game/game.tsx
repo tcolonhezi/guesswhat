@@ -3,7 +3,7 @@ import Header from "../header/header";
 import { type LettersUsedProps } from "../lettersUsed/lettersUsed";
 import Tip from "../tip/tip";
 import Letter from "../letter/letter";
-import { useEffect, useState, type ChangeEvent } from "react";
+import { useEffect, useState } from "react";
 import { RestartScreen } from "../restartScreen/restartScreen";
 import type { Dispatch, SetStateAction } from "react";
 import VirtualKeyboard from "../virtualKeyboard/virtualKeyboard";
