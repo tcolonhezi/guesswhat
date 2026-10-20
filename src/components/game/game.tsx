@@ -1,12 +1,12 @@
 import type { Challenge } from "../../constants/words";
 import Header from "../header/header";
-import Input from "../input/input";
-import LetterUsed, { type LettersUsedProps } from "../lettersUsed/lettersUsed";
+import { type LettersUsedProps } from "../lettersUsed/lettersUsed";
 import Tip from "../tip/tip";
 import Letter from "../letter/letter";
-import { useEffect, useState, type ChangeEvent } from "react";
+import { useEffect, useState } from "react";
 import { RestartScreen } from "../restartScreen/restartScreen";
 import type { Dispatch, SetStateAction } from "react";
+import VirtualKeyboard from "../virtualKeyboard/virtualKeyboard";
 
 type GameProps = {
   isOffline: boolean;
@@ -44,8 +44,24 @@ export function Game({
     handleConfirmLetter();
   }, [letter]);
 
-  function handleInputLetter(e: ChangeEvent<HTMLInputElement>) {
-    setLetter(e.target.value.toUpperCase());
+  function handleGuess(letter: string) {
+    if (isWinner || isLoser) return;
+
+    const hits = challenge.word
+      .toUpperCase()
+      .split("")
+      .filter((char) => char === letter).length;
+
+    const nextScore = score + hits;
+    const nextAttempts = attempts + 1;
+    const maxAttempts = challenge.word.length * 2;
+
+    setLettersUsed((prev) => [...prev, { letter, correct: hits > 0 }]);
+    setAttempts(nextAttempts);
+    setScore(nextScore);
+
+    if (nextScore === challenge.word.length) setIsWinner(true);
+    else if (nextAttempts >= maxAttempts) setIsLoser(true);
   }
 
   function handleConfirmLetter() {
@@ -115,17 +131,14 @@ export function Game({
       <div>
         <h4 className="font-bold">Palpite</h4>
         <div className="my-3 flex gap-3">
-          <Input
-            autoFocus
-            maxLength={1}
-            placeholder="?"
-            value={letter}
-            onChange={handleInputLetter}
+          <VirtualKeyboard
+            lettersUsed={lettersUsed}
+            onKeyPress={handleGuess}
+            disabled={isWinner || isLoser}
           />
         </div>
       </div>
       <div className="border-t-2 border-divider" />
-      <LetterUsed data={lettersUsed} />
 
       {isWinner && (
         <RestartScreen isWinner handleRestartGame={handleRestartGame} />
