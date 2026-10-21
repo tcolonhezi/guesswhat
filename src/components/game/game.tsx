@@ -83,7 +83,10 @@ export function Game({
     const hits = challenge.word
       .toUpperCase()
       .split("")
-      .filter((char) => char === letter).length;
+      .filter(
+        (char) =>
+          char.normalize("NFD").replace(/[\u0300-\u036f]/g, "") === letter,
+      ).length;
 
     const currentScore = score + hits;
     const nextAttempts = attempts + 1;
@@ -118,7 +121,9 @@ export function Game({
       <div className="my-10 flex w-full flex-wrap justify-center gap-4">
         {challenge.word.split("").map((char, index) => {
           const letterToDisplay = lettersUsed.find(
-            (e) => e.letter.toLocaleLowerCase() === char,
+            (e) =>
+              e.letter.toLocaleLowerCase() ===
+              char.normalize("NFD").replace(/[\u0300-\u036f]/g, ""),
           );
           if (letterToDisplay) {
             return <Letter key={`${char}-${index}`} letter={char} />;
